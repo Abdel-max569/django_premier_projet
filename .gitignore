@@ -1,0 +1,17 @@
+# --- Environnement virtuel et gestion des dépendances (uv / pip) ---
+.venv/
+wheels/
+build/
+dist/
+*.egg-info/
+__pycache__/
+*.py[oc]
+*.sqlite3
+.vscode/
+
+
+logs/
+*.log
+.pytest_cache/
+.coverage
+htmlcov/
