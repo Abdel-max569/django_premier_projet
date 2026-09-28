@@ -2,6 +2,7 @@ from django.contrib import admin
 from django.db import models
 
 from .models import Entreprise
+from stages.models.entreprise import Entreprise
 
 @admin.register(Entreprise)
 
