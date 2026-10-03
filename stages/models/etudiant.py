@@ -1,7 +1,9 @@
 from django.db import models
+
+from .personne import Personne
 from .competence import Competence
 
-class Etudiant(models.Model):
+class Etudiant(Personne):
     matricule = models.CharField(max_length=50)
     promotion = models.CharField(max_length=30)
     

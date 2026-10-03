@@ -1,6 +1,6 @@
+
 from django.db import models
 
-from .stage import Stage
 
 from .offre import Offre
 from .etudiant import Etudiant
@@ -13,11 +13,7 @@ class Candidature(models.Model):
         REFUSE = "refuse" , "REFUSE"
         
         
-    stage = models.OneToOneField(
-        Stage,
-        related_name="candidature",
-        on_delete=models.PROTECT
-    )
+    
         
     etudiant = models.ForeignKey(
         Etudiant,
@@ -39,5 +35,9 @@ class Candidature(models.Model):
    
     class Meta:
         ordering = ["date_debut"]
+        constraints = [models.UniqueConstraint(
+            fields = ["offre","etudiant"],
+            name="offre_etudiant"
+        )] 
 
    

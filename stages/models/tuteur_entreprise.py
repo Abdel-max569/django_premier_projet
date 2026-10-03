@@ -1,8 +1,10 @@
 from django.db import models
 
+from .personne import Personne
+
 from .entreprise import Entreprise
 
-class TuteurEntreprise(models.Model):
+class TuteurEntreprise(Personne):
     pass
     entreprise = models.ForeignKey(
         Entreprise, 

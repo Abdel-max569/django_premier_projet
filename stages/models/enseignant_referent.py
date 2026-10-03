@@ -1,7 +1,9 @@
 from django.db import models
 
+from .personne import Personne
 
-class EnseignantReferent(models.Model):
+
+class EnseignantReferent(Personne):
     pass
                 
     

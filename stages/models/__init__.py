@@ -6,6 +6,8 @@ from .tuteur_entreprise import TuteurEntreprise
 from .offre import Offre
 from .candidature import Candidature
 from .stage import Stage
+from .enseignant_referent import EnseignantReferent
 
 
-__all__ = ["Entreprise","Personne","Etudiant","Competence","TuteurEntreprise","Offre","Candidature","Stage"]
+
+__all__ = ["Entreprise","Personne","Etudiant","Competence","TuteurEntreprise","Offre","Candidature","Stage","EnseignantReferent"]

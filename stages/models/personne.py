@@ -11,6 +11,7 @@ class Personne(models.Model):
     sexe = models.CharField(choices = Sexe)
 
     class Meta:
+        abstract = True
         ordering = ['nom','prenom']
         verbose_name = "Personne"
         verbose_name_plural = "Personnes"
