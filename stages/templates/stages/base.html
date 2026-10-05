@@ -1,0 +1,12 @@
+{% load static %}
+<!doctype html>
+<html lang="fr">
+  <head>
+    <title>{% block titre %}Stage{% endblock %}</title>
+    {% comment %} <link rel="stylesheet" href="{% static 'bibliotheque/style.css' %}" /> {% endcomment %}
+  </head>
+  <body>
+    <nav><a href="#">OFFRES</a></nav>
+    <main>{% block contenu %}{% endblock %}</main>
+  </body>
+</html>

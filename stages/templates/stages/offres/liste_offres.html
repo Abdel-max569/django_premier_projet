@@ -1,0 +1,41 @@
+{% extends "stages/base.html" %}
+{% block titre %} Toutes les offres {% endblock %} 
+{% block contenu %}
+<h1>Toutes les offres</h1>
+
+{% if offres %}
+<table border="1" cellpadding=5 cellspaccing=0>
+  <thead>
+    <tr>
+      <th>Titre de l'offre</th>
+      <th>Entreprise</th>
+      <th>Date de début</th>
+      <th>Date de fin</th>
+      <th>Nombre de places</th>
+      <th>Compétences requises</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for offre in offres %}
+    <tr>
+      <td><a href="#">{{ offre.titre }}</a></td>
+      <td>{{ offre.entreprise.nom }}</td>
+      <td>{{ offre.date_debut }}</td>
+      <td>{{ offre.date_fin }}</td>
+      <td>{{ offre.nb_place }}</td>
+      <td>
+        <ul>
+          {% for competence in offre.competences.all %}
+          <li>{{ competence.libelle }}</li>
+          {% endfor %}
+        </ul>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% else %}
+<p>Aucune offre trouvée.</p>
+{% endif %}
+
+{% endblock %}

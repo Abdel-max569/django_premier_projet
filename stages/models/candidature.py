@@ -19,9 +19,7 @@ class Candidature(models.Model):
         on_delete=models.PROTECT
     )
         
-    date_debut = models.DateField()
-    date_fin = models.DateField()
-    nb_place = models.PositiveIntegerField()
+    
     date_depot = models.DateField()
     statut = models.CharField(choices=Statut)
     
@@ -32,7 +30,7 @@ class Candidature(models.Model):
     )
    
     class Meta:
-        ordering = ["date_debut"]
+        ordering = ["date_depot"]
         constraints = [models.UniqueConstraint(
             fields = ["offre","etudiant"],
             name="offre_etudiant"

@@ -12,6 +12,9 @@ class Offre(models.Model):
     #     related_name="offres",
     #     on_delete= models.PROTECT
     # )
+    date_debut = models.DateField()
+    date_fin = models.DateField()
+    nb_place = models.PositiveIntegerField()
     
     entreprise = models.ForeignKey('Entreprise',related_name="offres",on_delete=models.PROTECT, null=True, blank=True)
 

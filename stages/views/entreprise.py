@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from .models import Entreprise
+from ..models import Entreprise
 
 def liste_entreprises(request):
     return render(
