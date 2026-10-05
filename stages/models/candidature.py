@@ -11,9 +11,7 @@ class Candidature(models.Model):
         DEPOSE = "depose", "DEPOSE" 
         RETENUE = "retenue" , "RETENUE"
         REFUSE = "refuse" , "REFUSE"
-        
-        
-    
+            
         
     etudiant = models.ForeignKey(
         Etudiant,

@@ -16,4 +16,4 @@ class Etudiant(Personne):
         ordering = ["promotion"]
 
     def __str__(self):
-        return f"{self.matricule}-{self.promotion }"
+        return f"{self.nom}-{self.prenom} ({self.matricule})"
