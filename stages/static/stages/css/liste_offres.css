@@ -1,0 +1,119 @@
+/* ==========================================================================
+   STYLE DE LA PAGE TOUTES LES OFFRES
+   ========================================================================== */
+
+h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 24px;
+  color: #0f172a;
+}
+
+/* Tableau moderne (neutralise les attributs HTML d'ancienne génération) */
+.modern-table {
+  width: 100%;
+  border-collapse: collapse !important;
+  border: none !important;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+  overflow: hidden;
+  display: table;
+}
+
+/* En-tête */
+.modern-table thead tr {
+  background-color: #f1f5f9;
+}
+
+.modern-table th {
+  color: #64748b;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  padding: 14px 24px !important;
+  border: none !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+  text-align: left;
+}
+
+/* Lignes et cellules */
+.modern-table tbody tr {
+  transition: background-color 0.15s ease;
+  border-bottom: 1px solid #e2e8f0 !important;
+}
+
+.modern-table tbody tr:nth-child(even) {
+  background-color: #f8fafc;
+}
+
+.modern-table tbody tr:hover {
+  background-color: #eff6ff; /* Surlignage bleu clair */
+}
+
+.modern-table tbody tr:last-child {
+  border-bottom: none !important;
+}
+
+.modern-table td {
+  padding: 16px 24px !important;
+  border: none !important;
+  color: #334155;
+  font-size: 0.95rem;
+  vertical-align: middle;
+}
+
+/* Liens des offres */
+.modern-table td a {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.modern-table td a:hover {
+  text-decoration: underline;
+  color: #1d4ed8;
+}
+
+/* Badge pour le nombre de places */
+.badge-slots {
+  background-color: #f1f5f9;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: #475569;
+}
+
+/* Transformation de la liste de compétences en petits badges alignés */
+.skills-list {
+  list-style-type: none !important;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 0;
+  margin: 0;
+}
+
+.skills-list li {
+  background-color: #eff6ff;
+  color: #2563eb;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  border: 1px solid #dbeafe;
+}
+
+/* Message si aucune offre */
+.empty-message {
+  background: #ffffff;
+  padding: 32px;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  text-align: center;
+  color: #64748b;
+  font-style: italic;
+}

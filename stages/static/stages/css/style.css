@@ -1,0 +1,91 @@
+/* ==========================================================================
+   CHARGEMENT DE LA TYPOGRAPHIE MODERNE
+   ========================================================================== */
+@import url('https://googleapis.com');
+
+/* ==========================================================================
+   VARIABLES, APPARENCE ET RESET GLOBAL
+   ========================================================================== */
+:root {
+  --primary: #2563eb;
+  --primary-light: #eff6ff;
+  --bg-site: #f8fafc;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --border: #e2e8f0;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-site);
+  color: var(--text-main);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ==========================================================================
+   BARRE DE NAVIGATION (Balise nav existante)
+   ========================================================================== */
+nav {
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 16px 24px;
+}
+
+/* Ciblage de la liste ul */
+nav > ul {
+  max-width: 1100px;
+  margin: 0 auto;
+  justify-content: flex-start !important; /* Force l'alignement moderne à gauche */
+  align-items: center;
+}
+
+/* Liens hypertexte de la navigation */
+nav ul li a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  display: inline-block;
+}
+
+nav ul li a:hover {
+  color: var(--primary);
+  background-color: var(--primary-light);
+}
+
+/* ==========================================================================
+   ZONE DE CONTENU PRINCIPALE (Balise main existante)
+   ========================================================================== */
+main {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 24px;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Animation fluide d'apparition du contenu */
+@keyframes fadeIn {
+  from { 
+    opacity: 0; 
+    transform: translateY(10px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}

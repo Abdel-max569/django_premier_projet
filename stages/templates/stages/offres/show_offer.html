@@ -1,0 +1,15 @@
+{% extends "stages/base.html" %}
+{% load static %}
+{% block titre %} L'offre : {{ offre.titre }} {% endblock %} 
+{% block contenu %}
+
+<!-- Lien vers le fichier CSS dédié -->
+<link rel="stylesheet" href="{% static 'stages/css/detail_offre.css' %}" />
+
+<h1>L'offre : {{ offre.titre }}</h1>
+<p>{{offre.description}}</p>
+
+
+<a href="{% url 'stages:detail_entreprise' offre.entreprise.id %}">{{ offre.entreprise.nom }}</a>
+
+{% endblock %}

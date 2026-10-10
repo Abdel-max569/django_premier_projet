@@ -1,19 +1,27 @@
 {% extends "stages/base.html" %}
 {% load static %}
-{% block titre %} Toutes les offres {% endblock %} 
+{% block titre %} Détails de l'entreprise : {{ entreprise.nom }} {% endblock %} 
 {% block contenu %}
 
 <!-- Lien vers le fichier CSS dédié -->
-<link rel="stylesheet" href="{% static 'stages/css/liste_offres.css' %}" />
+<link rel="stylesheet" href="{% static 'stages/css/detail_entreprise.css' %}" />
 
-<h1>Toutes les offres</h1>
+<h1>Détails de l'entreprise : {{ entreprise.nom }}</h1>
 
-{% if offres %}
+<!-- Cette liste brute sera automatiquement transformée en grille de cartes par le CSS -->
+<ul class="company-info-list">
+    <li>Nom : {{ entreprise.nom }}</li>     
+    <li>Ville : {{ entreprise.ville }}</li>
+    <li>Secteur : {{ entreprise.secteur }}</li>
+    <li>Contact : {{ entreprise.contact }}</li>
+</ul>
+
+<h2>Offres de stage proposées par cette entreprise :</h2>
+{% if entreprise.offres.all %}
 <table class="modern-table" border="1" cellpadding=5 cellspaccing=0>
   <thead>
     <tr>
       <th>Titre de l'offre</th>
-      <th>Entreprise</th>
       <th>Date de début</th>
       <th>Date de fin</th>
       <th>Nombre de places</th>
@@ -21,10 +29,9 @@
     </tr>
   </thead>
   <tbody>
-    {% for offre in offres %}
+    {% for offre in entreprise.offres.all %}
     <tr>
       <td><a href="{% url "stages:detail_offre" offre.pk %}">{{ offre.titre }}</a></td>
-      <td>{{ offre.entreprise.nom }}</td>
       <td>{{ offre.date_debut }}</td>
       <td>{{ offre.date_fin }}</td>
       <td><span class="badge-slots">{{ offre.nb_place }}</span></td>
@@ -40,7 +47,6 @@
   </tbody>
 </table>
 {% else %}
-<div class="empty-message">Aucune offre trouvée.</div>
+<div class="empty-message">Aucune offre de stage proposée par cette entreprise.</div>
 {% endif %}
-
 {% endblock %}

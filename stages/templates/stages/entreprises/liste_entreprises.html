@@ -1,0 +1,35 @@
+{% extends "stages/base.html" %}
+{% block titre %} Liste des entreprises {% endblock %}
+{% block contenu %}
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'stages/css/liste_entreprises.css' %}" />
+<h1>Entreprises partenaires</h1>
+
+<!-- Ajout d'un conteneur pour gérer le responsive et l'ombre -->
+<div class="table-container">
+  <table class="modern-table" border="1" cellpadding=5 cellspaccing=0>
+    <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Ville</th>
+        <th>Secteur</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for entreprise in entreprises %}
+      <tr>
+        <td><a href="{% url 'stages:detail_entreprise' entreprise.id %}">{{ entreprise.nom }}</a></td>
+        <td>{{ entreprise.ville }}</td>
+        <td>{{ entreprise.secteur }}</td>
+      </tr>
+      {% empty %}
+      <tr>
+        <td colspan="3" class="empty-message">Aucune entreprise enregistrée pour le moment.</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+{% endblock %}

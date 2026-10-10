@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 from django.http import HttpRequest
 
 from ..models import Offre
@@ -13,3 +13,10 @@ def liste_offres(request:HttpRequest):
         }
         )
 
+
+def show_offer(request:HttpRequest , offre_id:int):
+    return render(
+        request,
+        "stages/offres/show_offer.html",
+        {"offre":get_object_or_404(Offre,pk=offre_id)}
+    )
