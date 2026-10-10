@@ -32,8 +32,8 @@ class CompetenceAdmin(admin.ModelAdmin):
     
 @admin.register(Candidature)   
 class CandidatureAdmin(admin.ModelAdmin):
-    list_display = ["date_debut","nb_place","date_depot","date_fin","statut"] 
-    search_fields = ["date_debut","nb_place","date_depot","date_fin","statut"]
+    list_display = ["date_depot","statut"] 
+    search_fields = ["date_depot","statut"]
 
 @admin.register(Offre)   
 class OffreAdmin(admin.ModelAdmin):

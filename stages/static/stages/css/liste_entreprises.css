@@ -1,0 +1,95 @@
+/* ==========================================================================
+   STYLE DE LA PAGE LISTE DES ENTREPRISES
+   ========================================================================== */
+
+/* Titre principal */
+h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 24px;
+  color: #0f172a;
+}
+
+/* Le conteneur du tableau */
+.table-container {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+  overflow: hidden; /* Permet aux angles du tableau de suivre l'arrondi du conteneur */
+  margin-top: 20px;
+}
+
+/* Le tableau (on neutralise de force le border="1" et les espacements HTML) */
+.modern-table {
+  width: 100%;
+  border-collapse: collapse !important; /* Écrase l'attribut cellspacing */
+  border: none !important;              /* Écrase l'attribut border="1" */
+  font-size: 0.95rem;
+}
+
+/* En-tête du tableau */
+.modern-table thead tr {
+  background-color: #f1f5f9;
+}
+
+.modern-table th {
+  color: #64748b;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  padding: 14px 24px !important;       /* Écrase le cellpadding HTML */
+  border: none !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+  text-align: left;
+}
+
+/* Corps du tableau */
+.modern-table tbody tr {
+  transition: background-color 0.15s ease;
+}
+
+/* Lignes alternées (effet zébré cool) */
+.modern-table tbody tr:nth-child(even) {
+  background-color: #f8fafc;
+}
+
+/* Effet de survol sur les lignes */
+.modern-table tbody tr:hover {
+  background-color: #f1f5f9;
+}
+
+.modern-table td {
+  padding: 16px 24px !important;       /* Écrase le cellpadding HTML */
+  border: none !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+  color: #334155;
+}
+
+/* Supprime la bordure sur la toute dernière ligne du tableau */
+.modern-table tbody tr:last-child td {
+  border-bottom: none !important;
+}
+
+/* Style des liens (Noms des entreprises) */
+.modern-table td a {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.15s ease;
+}
+
+.modern-table td a:hover {
+  color: #1d4ed8;
+  text-decoration: underline;
+}
+
+/* Message si le tableau est vide */
+.empty-message {
+  text-align: center;
+  color: #64748b;
+  font-style: italic;
+  background-color: #ffffff;
+}

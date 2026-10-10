@@ -1,0 +1,18 @@
+{% load static %}
+<!doctype html>
+<html lang="fr">
+  <head>
+    <title>{% block titre %}Stage{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'stages/css/style.css' %}" />
+
+  </head>
+  <body>
+    <nav>
+      <ul style="list-style-type: none; display: flex; gap: 10px;">
+        <li><a href="{% url 'stages:liste_offres' %}">Offres</a></li>
+        <li><a href="{% url 'stages:liste_entreprises' %}">Entreprises</a></li>
+      </ul>
+    </nav>
+    <main>{% block contenu %}{% endblock %}</main>
+  </body>
+</html>

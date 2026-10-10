@@ -95,3 +95,4 @@ b. Problème et responsabilités
 • Qui doit refuser ?
 	• Dates et Titre vide : Le Modèle. La base ne comprend pas les règles logiques. C'est au modèle Django de bloquer cela .
 	• Double candidature : La Base de données. C'est un problème d'unicité pure. 
+	
